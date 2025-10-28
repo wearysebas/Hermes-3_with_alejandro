@@ -1,0 +1,119 @@
+MXG = 0		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+datadir = examples/tokamak-1D/1D-threshold/upstream5e18/		# type: string, source: Command line
+nout = 50		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+optionfile = BOUT.inp		# type: string, source: default
+settingsfile = BOUT.settings		# type: string, source: default
+timestep = 95788 * 0.05		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[NVd+]
+function = 0		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[Nd]
+function = 0.001		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[Nd+]
+function = 1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+source_shape = H(mesh:y_xpt - y) * 1e20		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[Pd]
+function = 0.0001		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[Pd+]
+function = 1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+powerflux = 2.5e7		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+source = (powerflux*2/3 / (mesh:length_xpt))*H(mesh:y_xpt - y)		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[Pe]
+function = `Pd+:function`		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+source = `Pd+:source`		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[d]
+AA = 2		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+charge = 0		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+density_floor = 1e-5		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+diagnose = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+thermal_conduction = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+type = (evolve_density, evolve_pressure, evolve_momentum,noflow_boundary)		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[d+]
+AA = 2		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+charge = 1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+density_controller_i = 1e-2		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+density_controller_p = 5e2		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+density_source_positive = false		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+density_upstream = 5e18		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+diagnose = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+noflow_lower_y = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+noflow_upper_y = false		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+recycle_as = d		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+target_recycle = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+target_recycle_energy = 3.5		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+target_recycle_multiplier = 1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+thermal_conduction = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+type = (evolve_density, evolve_pressure, evolve_momentum,noflow_boundary, upstream_density_feedback)		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[e]
+AA = 1/1836		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+charge = -1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+diagnose = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+noflow_upper_y = false		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+thermal_conduction = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+type = quasineutral, evolve_pressure, zero_current, noflow_boundary		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[electromagnetic:laplacian]
+atol_accept = 1e-06		# unused value (NOT marked conditionally used), type: BoutReal, source: user_default
+maxits = 1000		# unused value (NOT marked conditionally used), type: int, source: user_default
+rtol_accept = 0.01		# unused value (NOT marked conditionally used), type: BoutReal, source: user_default
+type = naulin		# unused value (NOT marked conditionally used), type: string, source: user_default
+
+[hermes]
+Bnorm = 1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+Nnorm = 1e19		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+Tnorm = 100		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+components = (d+, d, e,sheath_boundary_simple, collisions, recycling, reactions,electron_force_balance, neutral_parallel_diffusion)		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+normalise_metric = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[mesh]
+J = 1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+calcParallelSlices_on_communicate = false		# unused value (NOT marked conditionally used), type: bool, source: user_default
+dy = (length / ny) * (1 + (1-dymin)*(1-y/pi))		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+dymin = 0.1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+ixseps1 = -1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+ixseps2 = -1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+length = 30		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+length_xpt = 10		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+nx = 1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+ny = 400		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+nz = 1		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+source = length_xpt / length		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+y_xpt = pi * ( 2 - dymin - sqrt( (2-dymin)^2 - 4*(1-dymin)*source ) ) / (1 - dymin)		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[neutral_parallel_diffusion]
+dneut = 10		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[reactions]
+diagnose = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+type = (d + e -> d+ + 2e,d+ + e -> d,d + d+ -> d+ + d,)		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[recycling]
+species = d+		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[run]
+revision = c4c149a28a63f787302db9671505c7556c19b20d		# unused value (NOT marked conditionally used), source: Output
+started = Mon Oct 20 15:12:05 2025
+		# unused value (NOT marked conditionally used), source: Output
+version = 5.1.2.dev982+gc4c149a28		# unused value (NOT marked conditionally used), source: Output
+
+[sheath_boundary_simple]
+gamma_e = 3.5		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+gamma_i = 3.5		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+lower_y = false		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+upper_y = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+
+[solver]
+atol = 1e-7		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+mxorder = 3		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+mxstep = 1e9		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+rtol = 1e-5		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+type = cvode		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp
+use_precon = true		# unused value (NOT marked conditionally used), source: examples/tokamak-1D/1D-threshold/upstream5e18/BOUT.inp

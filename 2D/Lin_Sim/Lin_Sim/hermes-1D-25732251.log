@@ -1,0 +1,186 @@
+BOUT++ version 5.1.2.dev982+gc4c149a28
+Revision: c4c149a28a63f787302db9671505c7556c19b20d
+Code compiled on Oct 16 2025 at 16:07:08
+
+B.Dudson (University of York), M.Umansky (LLNL) 2007
+Based on BOUT by Xueqiao Xu, 1999
+
+Processor number: 0 of 4
+
+pid: 2185004
+
+Compile-time options:
+	Runtime error checking disabled
+	Parallel NetCDF support disabled
+	Metrics mode is 2D
+	FFT support enabled
+	Natural language support enabled
+	LAPACK support disabled
+	NetCDF support enabled (NetCDF4)
+	ADIOS2 support disabled
+	PETSc support enabled
+	Pretty function name support enabled
+	PVODE support enabled
+	Score-P support disabled
+	SLEPc support disabled
+	SUNDIALS support enabled
+	Backtrace in exceptions enabled
+	Colour in logs enabled
+	OpenMP parallelisation disabled, using 1 threads
+	Extra debug output disabled
+	Floating-point exceptions disabled
+	Signal handling support enabled
+	Field name tracking enabled
+	Message stack disabled
+	Compiled with flags : "-Wall -Wextra -Wnull-dereference -Wno-cast-function-type -DCHECK=0 -O3 -DNDEBUG"
+	Command line options for this run : hermes-3 -d 2D_Sim/Lin_Sim/ 
+Reading options file 2D_Sim/Lin_Sim/BOUT.inp
+	Option datadir = 2D_Sim/Lin_Sim/ (Command line)
+	Option optionfile = BOUT.inp (default)
+	Option settingsfile = BOUT.settings (default)
+Writing options to file 2D_Sim/Lin_Sim//BOUT.settings
+	Option mesh:type = bout (default)
+	Option grid =  (default)
+	Option mesh:file = mu1af6-tunepuff.nc (2D_Sim/Lin_Sim/BOUT.inp)
+
+Getting grid data from file mu1af6-tunepuff.nc
+	Option format =  (default)
+	Option mesh:format =  (default)
+	Option file = mu1af6-tunepuff.nc ()
+	Option append = 0 (default)
+terminate called after throwing an instance of 'BoutException'
+  what():  	 -> Leg region jyseps1_1+1 (10) must be a multiple of MYSUB (25)
+
+[node009:1042716] *** Process received signal ***
+[node009:1042716] Signal: Aborted (6)
+[node009:1042716] Signal code:  (-6)
+[node009:1042716] [ 0] /lib64/libpthread.so.0(+0x12990)[0x7ffff5862990]
+[node009:1042716] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7ffff3d3852f]
+[node009:1042716] [ 2] /lib64/libc.so.6(abort+0x127)[0x7ffff3d0be65]
+[node009:1042716] [ 3] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xadecc)[0x7ffff545decc]
+[node009:1042716] [ 4] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xb8f86)[0x7ffff5468f86]
+[node009:1042716] [ 5] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xb8ff1)[0x7ffff5468ff1]
+[node009:1042716] [ 6] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(__cxa_rethrow+0x49)[0x7ffff54692d9]
+[node009:1042716] [ 7] /users/sr1937/scratch/BOUT-c4c149a/BOUT-dev/build/lib/libbout++.so.5.1.0(+0x104460)[0x7ffff79a4460]
+[node009:1042716] [ 8] hermes-3[0x43cd8f]
+[node009:1042716] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7ffff3d247e5]
+[node009:1042716] [10] hermes-3[0x44188e]
+[node009:1042716] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+terminate called after throwing an instance of 'BoutException'
+  what():  	 -> Leg region jyseps1_1+1 (10) must be a multiple of MYSUB (25)
+
+[node008:2185005] *** Process received signal ***
+[node008:2185005] Signal: Aborted (6)
+[node008:2185005] Signal code:  (-6)
+[node008:2185005] [ 0] /lib64/libpthread.so.0(+0x12990)[0x7ffff5862990]
+[node008:2185005] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7ffff3d3852f]
+[node008:2185005] [ 2] /lib64/libc.so.6(abort+0x127)[0x7ffff3d0be65]
+[node008:2185005] [ 3] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xadecc)[0x7ffff545decc]
+[node008:2185005] [ 4] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xb8f86)[0x7ffff5468f86]
+[node008:2185005] [ 5] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xb8ff1)[0x7ffff5468ff1]
+[node008:2185005] [ 6] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(__cxa_rethrow+0x49)[0x7ffff54692d9]
+[node008:2185005] [ 7] /users/sr1937/scratch/BOUT-c4c149a/BOUT-dev/build/lib/libbout++.so.5.1.0(+0x104460)[0x7ffff79a4460]
+[node008:2185005] [ 8] hermes-3[0x43cd8f]
+[node008:2185005] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7ffff3d247e5]
+[node008:2185005] [10] hermes-3[0x44188e]
+[node008:2185005] *** End of error message ***
+	Option y_boundary_guards = 2 (mu1af6-tunepuff.nc)
+	Option ny_inner = 40 (mu1af6-tunepuff.nc)
+	Option mesh:calcParallelSlices_on_communicate = false (user_default)
+	Option mesh:maxregionblocksize = 64 (default)
+	Option mesh:staggergrids = 0 (default)
+	Option mesh:include_corner_cells = 1 (default)
+	Option mesh:ddz:fft_filter = 0 (default)
+	Option mesh:symmetricGlobalX = 1 (default)
+	Option optionfile = BOUT.inp (default)
+WARNING: The default of this option has changed in release 4.1.
+If you want the old setting, you have to specify mesh:symmetricGlobalY=false in BOUT.inp
+	Option mesh:symmetricGlobalY = 1 (default)
+Loading mesh
+	Option nx = 40 (mu1af6-tunepuff.nc)
+	Option ny = 100 (mu1af6-tunepuff.nc)
+	Option nz = 0 ()
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option MZ = 1 (2D_Sim/Lin_Sim/BOUT.inp)
+	Option nz = 1 (default)
+	Grid size: 40 x 100 x 1
+	Option MXG = 0 ()
+	Option MXG = 2 (default)
+	Option MYG = 0 ()
+	Option MYG = 2 (default)
+	Guard cells (x,y,z): 2, 2, 0
+	Option ixseps1 = 20 (mu1af6-tunepuff.nc)
+	Option ixseps2 = 20 (mu1af6-tunepuff.nc)
+	Option jyseps1_1 = 9 (mu1af6-tunepuff.nc)
+	Option jyseps1_2 = 59 (mu1af6-tunepuff.nc)
+	Option jyseps2_1 = 29 (mu1af6-tunepuff.nc)
+	Option jyseps2_2 = 79 (mu1af6-tunepuff.nc)
+	Option ny_inner = 40 (mu1af6-tunepuff.nc)
+	Option NXPE = 1 (2D_Sim/Lin_Sim/BOUT.inp)
+Error encountered during initialisation: 	 -> Leg region jyseps1_1+1 (10) must be a multiple of MYSUB (25)
+
+terminate called after throwing an instance of 'BoutException'
+  what():  	 -> Leg region jyseps1_1+1 (10) must be a multiple of MYSUB (25)
+
+[node008:2185004] *** Process received signal ***
+[node008:2185004] Signal: Aborted (6)
+[node008:2185004] Signal code:  (-6)
+[node008:2185004] [ 0] /lib64/libpthread.so.0(+0x12990)[0x7ffff5862990]
+[node008:2185004] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7ffff3d3852f]
+[node008:2185004] [ 2] /lib64/libc.so.6(abort+0x127)[0x7ffff3d0be65]
+[node008:2185004] [ 3] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xadecc)[0x7ffff545decc]
+[node008:2185004] [ 4] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xb8f86)[0x7ffff5468f86]
+[node008:2185004] [ 5] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xb8ff1)[0x7ffff5468ff1]
+[node008:2185004] [ 6] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(__cxa_rethrow+0x49)[0x7ffff54692d9]
+[node008:2185004] [ 7] /users/sr1937/scratch/BOUT-c4c149a/BOUT-dev/build/lib/libbout++.so.5.1.0(+0x104460)[0x7ffff79a4460]
+[node008:2185004] [ 8] hermes-3[0x43cd8f]
+[node008:2185004] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7ffff3d247e5]
+[node008:2185004] [10] hermes-3[0x44188e]
+[node008:2185004] *** End of error message ***
+terminate called after throwing an instance of 'BoutException'
+  what():  	 -> Leg region jyseps1_1+1 (10) must be a multiple of MYSUB (25)
+
+[node013:3100591] *** Process received signal ***
+[node013:3100591] Signal: Aborted (6)
+[node013:3100591] Signal code:  (-6)
+[node013:3100591] [ 0] /lib64/libpthread.so.0(+0x12990)[0x7ffff5862990]
+[node013:3100591] [ 1] /lib64/libc.so.6(gsignal+0x10f)[0x7ffff3d3852f]
+[node013:3100591] [ 2] /lib64/libc.so.6(abort+0x127)[0x7ffff3d0be65]
+[node013:3100591] [ 3] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xadecc)[0x7ffff545decc]
+[node013:3100591] [ 4] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xb8f86)[0x7ffff5468f86]
+[node013:3100591] [ 5] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(+0xb8ff1)[0x7ffff5468ff1]
+[node013:3100591] [ 6] /opt/apps/eb/software/GCCcore/10.3.0/lib64/libstdc++.so.6(__cxa_rethrow+0x49)[0x7ffff54692d9]
+[node013:3100591] [ 7] /users/sr1937/scratch/BOUT-c4c149a/BOUT-dev/build/lib/libbout++.so.5.1.0(+0x104460)[0x7ffff79a4460]
+[node013:3100591] [ 8] hermes-3[0x43cd8f]
+[node013:3100591] [ 9] /lib64/libc.so.6(__libc_start_main+0xe5)[0x7ffff3d247e5]
+[node013:3100591] [10] hermes-3[0x44188e]
+[node013:3100591] *** End of error message ***
+--------------------------------------------------------------------------
+mpiexec noticed that process rank 2 with PID 1042716 on node node009 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+2 total processes killed (some possibly by mpiexec during cleanup)
+
+============================
+ Job utilisation efficiency
+============================
+
+Job ID: 25732251
+Cluster: viking2.yor.alces.network
+User/Group: sr1937/clusterusers
+State: FAILED (exit code 134)
+Nodes: 4
+Cores per node: 2
+CPU Utilized: 00:00:05
+CPU Efficiency: 0.59% of 00:14:10 core-walltime
+Job Wall-clock time: 00:01:25
+Memory Utilized: 24.57 MB
+Memory Efficiency: 0.60% of 4.00 GB
+ Requested wall clock time: 05:00:00
+    Actual wall clock time: 00:01:25
+Wall clock time efficiency: 0.5%
+           Job queued time: 00:00:01

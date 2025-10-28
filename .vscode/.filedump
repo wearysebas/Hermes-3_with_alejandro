@@ -1,0 +1,6 @@
+
+		begin
+      f = addfile("/Users/sruiz/Dev/PhD/Hermes-3_Runs-Viking/1D-threshold/BOUT.dmp.0.nc","r")
+      print(f)
+		end
+    

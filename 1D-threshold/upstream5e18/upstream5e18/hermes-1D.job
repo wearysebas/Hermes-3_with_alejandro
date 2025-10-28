@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+#SBATCH --job-name=hermes-1D               # Job name
+
+#SBATCH --ntasks=4                      # Number of MPI tasks to request
+
+#SBATCH --mem=1G                        # Total memory to request
+
+#SBATCH --time=0-00:10:00               # Time limit (DD-HH:MM:SS)
+
+#SBATCH --account=pet-bout-2025        # Project account to use
+
+#SBATCH --output=%x-%j.log              # Standard output log
+
+
+# Abort if any command fails
+
+set -e
+
+# Commands to run
+
+cd /users/sr1937/scratch/hermes-3/build-mc-master/
+
+source hermes.env
+
+mpiexec -n 4 hermes-3 -d examples/tokamak-1D/1D-threshold/upstream5e18/

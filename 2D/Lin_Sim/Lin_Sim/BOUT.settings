@@ -1,0 +1,191 @@
+MZ = 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+NXPE = 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+datadir = 2D_Sim/Lin_Sim/		# type: string, source: Command line
+initial_ne = 0.5e18 / hermes:Nnorm		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+initial_pe = initial_te * initial_ne		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+initial_pi = initial_ti * initial_ne		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+initial_te = 25 / tnorm_setting		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+initial_ti = 25 / tnorm_setting		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+nout = 20000000		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+optionfile = BOUT.inp		# type: string, source: default
+settingsfile = BOUT.settings		# type: string, source: default
+timestep = 95780 * 0.1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+tnorm_setting = 100		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[DnnNnd]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[DnnPnd]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[DnnTnd]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[Dnnd]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[Nd]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_core = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_sol = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[Nd+]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_core = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_pf = decaylength(0.03 / hermes:rho_s0)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_sol = decaylength(0.03 / hermes:rho_s0)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+function = initial_ne		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[Pd]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_core = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_sol = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[Pd+]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_core = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_pf = decaylength(0.03 / hermes:rho_s0)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_sol = decaylength(0.03 / hermes:rho_s0)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+core_volume = 0.17737		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+function = initial_pi		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+power_in = 0.30		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+pressure_source = power_in * 1e6 * 2/3 / core_volume		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+source = H(x) * H(0.015-x) * pressure_source		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+source_only_in_core = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[Pe]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_core = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_pfr = decaylength(0.03 / hermes:rho_s0)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_sol = decaylength(0.03 / hermes:rho_s0)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+core_volume = 0.17737		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+function = initial_pi		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+power_in = 0.30		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+pressure_source = power_in * 1e6 * 2/3 / core_volume		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+source = H(x) * H(0.015-x) * pressure_source		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+source_only_in_core = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[Td]
+bndry_all = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+bndry_sol = neumann		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[c]
+diagnose = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+fraction = 0.02		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+no_core_radiation = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+type = fixed_fraction_carbon		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[collisions]
+diagnose = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+electron_electron = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+electron_ion = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+electron_neutral = false		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+ion_ion = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+ion_neutral = false		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+neutral_neutral = false		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[d]
+AA = 2		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+diagnose = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+diagnose_eqns = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+diffusion_collisions_mode = afn		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+evolve_momentum = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+kappa_limit_alpha = 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+neutral_boundary_lower_y = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+neutral_boundary_pfr = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+neutral_boundary_sol = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+neutral_boundary_upper_y = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+output_ddt = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+pfr_energy_refl_factor = 0.67		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+pfr_fast_refl_fraction = 0.70		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+precondition = false		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+sol_energy_refl_factor = 0.67		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+sol_fast_refl_fraction = 0.70		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+target_energy_refl_factor = 0.70		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+target_fast_refl_fraction = 0.80		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+type = neutral_mixed, neutral_boundary		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[d+]
+AA = 2		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+anomalous_nu = 0.2		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+charge = 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+conduction_collisions_mode = braginskii		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+diagnose = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+eta_limit_alpha = 0.5		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+kappa_limit_alpha = 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+neutral_pump = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+pfr_recycle = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+pfr_recycle_energy = 3.5		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+pfr_recycle_multiplier = 0.999		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+pump_recycle_multiplier = 0.999		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+recycle_as = d		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+sol_recycle = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+sol_recycle_energy = 3.5		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+sol_recycle_multiplier = 0.999		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+target_fast_recycle_energy_factor = 0.48		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+target_fast_recycle_fraction = 0.80		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+target_recycle = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+target_recycle_energy = 3.5		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+target_recycle_multiplier = 0.999		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+thermal_conduction = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+type = evolve_density, evolve_momentum, evolve_pressure, anomalous_diffusion		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[e]
+AA = 1/1836		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+charge = -1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+conduction_collisions_mode = braginskii		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+diagnose = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+kappa_limit_alpha = 0.3		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+thermal_conduction = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+type = quasineutral, evolve_pressure, zero_current, anomalous_diffusion		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[electromagnetic:laplacian]
+atol_accept = 1e-06		# unused value (NOT marked conditionally used), type: BoutReal, source: user_default
+maxits = 1000		# unused value (NOT marked conditionally used), type: int, source: user_default
+rtol_accept = 0.01		# unused value (NOT marked conditionally used), type: BoutReal, source: user_default
+type = naulin		# unused value (NOT marked conditionally used), type: string, source: user_default
+
+[hermes]
+Bnorm = 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+Cs0 = sqrt(qe * Tnorm / Mp)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+Mp = 1.67262e-27		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+Nnorm = 1e17		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+Omega_ci = qe * Bnorm / Mp		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+Tnorm = tnorm_setting		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+components = (d+, d, e, c,collisions, sheath_boundary_simple, recycling,sound_speed,reactions,electron_force_balance)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+qe = 1.60218e-19		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+rho_s0 = Cs0 / Omega_ci		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[input]
+error_on_unused_options = false		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[mesh]
+calcParallelSlices_on_communicate = false		# unused value (NOT marked conditionally used), type: bool, source: user_default
+file = mu1af6-tunepuff.nc		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[mesh:paralleltransform]
+type = shifted		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[reactions]
+diagnose = true		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+type = (d + e -> d+ + 2e,d+ + e -> d,d + d+ -> d+ + d,)		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[recycling]
+species = d+		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[run]
+revision = c4c149a28a63f787302db9671505c7556c19b20d		# unused value (NOT marked conditionally used), source: Output
+started = Fri Oct 24 09:30:59 2025
+		# unused value (NOT marked conditionally used), source: Output
+version = 5.1.2.dev982+gc4c149a28		# unused value (NOT marked conditionally used), source: Output
+
+[sheath_boundary_simple]
+gamma_e = 4.5		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+gamma_i = 2.5		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+
+[solver]
+atol = 1e-12 * 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+mxorder = 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+mxstep = 1e9		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+rtol = 1e-7 * 1		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp
+use_precon = True		# unused value (NOT marked conditionally used), source: 2D_Sim/Lin_Sim/BOUT.inp

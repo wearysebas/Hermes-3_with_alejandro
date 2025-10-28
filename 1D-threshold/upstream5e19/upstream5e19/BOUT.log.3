@@ -1,0 +1,593 @@
+BOUT++ version 5.1.2.dev982+gc4c149a28
+Revision: c4c149a28a63f787302db9671505c7556c19b20d
+Code compiled on Oct 16 2025 at 16:07:08
+
+B.Dudson (University of York), M.Umansky (LLNL) 2007
+Based on BOUT by Xueqiao Xu, 1999
+
+Processor number: 3 of 4
+
+pid: 1519739
+
+Compile-time options:
+	Runtime error checking disabled
+	Parallel NetCDF support disabled
+	Metrics mode is 2D
+	FFT support enabled
+	Natural language support enabled
+	LAPACK support disabled
+	NetCDF support enabled (NetCDF4)
+	ADIOS2 support disabled
+	PETSc support enabled
+	Pretty function name support enabled
+	PVODE support enabled
+	Score-P support disabled
+	SLEPc support disabled
+	SUNDIALS support enabled
+	Backtrace in exceptions enabled
+	Colour in logs enabled
+	OpenMP parallelisation disabled, using 1 threads
+	Extra debug output disabled
+	Floating-point exceptions disabled
+	Signal handling support enabled
+	Field name tracking enabled
+	Message stack disabled
+	Compiled with flags : "-Wall -Wextra -Wnull-dereference -Wno-cast-function-type -DCHECK=0 -O3 -DNDEBUG"
+	Command line options for this run : hermes-3 -d examples/tokamak-1D/1D-threshold/ 
+Reading options file examples/tokamak-1D/1D-threshold/BOUT.inp
+	Option datadir = examples/tokamak-1D/1D-threshold/ (Command line)
+	Option optionfile = BOUT.inp (default)
+	Option settingsfile = BOUT.settings (default)
+	Option mesh:type = bout (default)
+
+Getting grid data from options
+	Option mesh:calcParallelSlices_on_communicate = false (user_default)
+	Option mesh:maxregionblocksize = 64 (default)
+	Option mesh:staggergrids = 0 (default)
+	Option mesh:include_corner_cells = 1 (default)
+	Option mesh:ddz:fft_filter = 0 (default)
+	Option mesh:symmetricGlobalX = 1 (default)
+	Option optionfile = BOUT.inp (default)
+WARNING: The default of this option has changed in release 4.1.
+If you want the old setting, you have to specify mesh:symmetricGlobalY=false in BOUT.inp
+	Option mesh:symmetricGlobalY = 1 (default)
+Loading mesh
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option mesh:nx = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:ny = 400 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:nz = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Read nz from input grid file
+	Grid size: 1 x 400 x 1
+Variable 'MXG' not in mesh options. Setting to 0
+	Option MXG = 0 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+Variable 'MYG' not in mesh options. Setting to 0
+	Option MYG = 2 (default)
+	Guard cells (x,y,z): 0, 2, 0
+	Option mesh:ixseps1 = -1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:ixseps2 = -1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+Variable 'jyseps1_1' not in mesh options. Setting to -1
+Variable 'jyseps1_2' not in mesh options. Setting to 200
+Variable 'jyseps2_1' not in mesh options. Setting to 200
+Variable 'jyseps2_2' not in mesh options. Setting to 399
+Variable 'ny_inner' not in mesh options. Setting to 200
+Finding value for NXPE (ideal = 0.100000)
+	Candidate value: 1
+	 -> Good value
+	Domain split (NXPE=1, NYPE=4) into domains (localNx=1, localNy=100)
+	Option IncIntShear = 0 (default)
+	Option periodicX = 0 (default)
+	Option async_send = 0 (default)
+	Option ZMIN = 0 (default)
+	Option ZMAX = 1 (default)
+	EQUILIBRIUM IS SINGLE NULL (SND) 
+Variable 'limiter_count' not in mesh options. Setting to 0
+	MYPE_IN_CORE = false
+	DXS = 0, DIN = -1. DOUT = 2
+	UXS = 0, UIN = -1. UOUT = -1
+	XIN = -1, XOUT = -1
+	Twist-shift: 
+	Option twistshift = 0 (default)
+Variable 'ShiftAngle' not in mesh options. Setting to empty vector
+Possible boundary regions are: lower_target, upper_target, Boundary regions in this processor: upper_target, 
+Constructing default regions
+	Boundary region inner X
+	Boundary region outer X
+	Option mesh:extrapolate_x = 0 (default)
+	Option mesh:extrapolate_y = 0 (default)
+Variable 'dx' not in mesh options. Setting to 1.000000e+00
+	Option mesh:dy = (length / ny) * (1 + (1-dymin)*(1-y/pi)) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:length = 30 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:ny = 400 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:dymin = 0.1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option ZMIN = 0 (default)
+	Option ZMAX = 1 (default)
+Variable 'dz' not in mesh options. Setting to 6.283185e+00
+	Option mesh:paralleltransform:type = identity (default)
+Variable 'g11' not in mesh options. Setting to 1.000000e+00
+Variable 'g22' not in mesh options. Setting to 1.000000e+00
+Variable 'g33' not in mesh options. Setting to 1.000000e+00
+Variable 'g12' not in mesh options. Setting to 0.000000e+00
+Variable 'g13' not in mesh options. Setting to 0.000000e+00
+Variable 'g23' not in mesh options. Setting to 0.000000e+00
+	Local maximum error in diagonal inversion is 0.000000e+00
+	Local maximum error in off-diagonal inversion is 0.000000e+00
+	Option mesh:J = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Maximum difference in J is 0.000000e+00
+Variable 'Bxy' not in mesh options. Setting to 0.000000e+00
+	WARNING: Magnitude of B field 'Bxy' not found. Calculating from metric tensor
+Variable 'ShiftTorsion' not in mesh options. Setting to 0.000000e+00
+	WARNING: No Torsion specified for zShift. Derivatives may not be correct
+Calculating differential geometry terms
+	Communicating connection terms
+	Option non_uniform = 1 (default)
+Variable 'd2x' not in mesh options. Setting to 0.000000e+00
+	WARNING: differencing quantity 'd2x' not found. Calculating from dx
+Variable 'd2y' not in mesh options. Setting to 0.000000e+00
+	WARNING: differencing quantity 'd2y' not found. Calculating from dy
+	done
+	Option output:enabled = 1 (default)
+	Option restart_files:enabled = 1 (default)
+	Option datadir = examples/tokamak-1D/1D-threshold/ (Command line)
+	Option append = 0 (default)
+	Option output:type = netcdf (default)
+	Option output:prefix = BOUT.dmp (user_default)
+	Option output:path = examples/tokamak-1D/1D-threshold/ (user_default)
+	Option output:append = false (user_default)
+	Option datadir = examples/tokamak-1D/1D-threshold/ (Command line)
+	Option restart_files:type = netcdf (default)
+	Option restart_files:prefix = BOUT.restart (user_default)
+	Option restart_files:path = examples/tokamak-1D/1D-threshold/ (user_default)
+	Option restart_files:append = false (user_default)
+	Option solver:type = cvode (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option solver:monitor_timestep = 0 (default)
+	Option solver:save_repeat_run_id = 0 (default)
+	Option solver:is_nonsplit_model_diffusive = 1 (default)
+	Option solver:mms = 0 (default)
+	Option solver:mms_initialise = 0 (default)
+	Option nout = 50 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option solver:nout = 50 (default)
+	Option timestep = 4789.400000000001 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option solver:output_step = 4789.4 (default)
+Setting `nout` is deprecated. Please set `solver:nout` instead.Setting `timestep` is deprecated. Please set `solver:output_step` instead.	Option solver:diagnose = 0 (default)
+	Option solver:adams_moulton = 0 (default)
+	Option solver:func_iter = 0 (default)
+	Option solver:cvode_max_order = -1 (default)
+	Option solver:cvode_stability_limit_detection = 0 (default)
+	Option solver:atol = 1e-07 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option solver:rtol = 1e-05 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option solver:use_vector_abstol = 0 (default)
+	Option solver:mxstep = 1000000000 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option solver:max_timestep = 0 (default)
+	Option solver:min_timestep = 0 (default)
+	Option solver:start_timestep = 0 (default)
+	Option solver:mxorder = 3 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option solver:max_nonlinear_iterations = 3 (default)
+	Option solver:apply_positivity_constraints = 0 (default)
+	Option solver:maxl = 5 (default)
+	Option solver:use_precon = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option solver:rightprec = 0 (default)
+	Option solver:use_jacobian = 0 (default)
+	Option solver:cvode_nonlinear_convergence_coef = 0.1 (default)
+	Option solver:cvode_linear_convergence_coef = 0.05 (default)
+Setting up output (experimental output) file
+	Option restart = 0 (default)
+
+Git Version of Hermes: bb1dfc1dfad0c4a106b3db308088d4c0c81e3a64
+Slope limiter: MC
+	Option hermes:Tnorm = 100 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option hermes:Nnorm = 1e+19 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option hermes:Bnorm = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option hermes:recalculate_metric = 0 (default)
+	Option hermes:normalise_metric = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+Calculating differential geometry terms
+	Communicating connection terms
+	Option non_uniform = true (default)
+Variable 'd2x' not in mesh options. Setting to 0.000000e+00
+	WARNING: differencing quantity 'd2x' not found. Calculating from dx
+Variable 'd2y' not in mesh options. Setting to 0.000000e+00
+	WARNING: differencing quantity 'd2y' not found. Calculating from dy
+	Option hermes:components = (d+, d, e,sheath_boundary_simple, collisions, recycling, reactions,electron_force_balance, neutral_parallel_diffusion) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:type = (evolve_density, evolve_pressure, evolve_momentum,noflow_boundary, upstream_density_feedback) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:bndry_flux = 1 (default)
+	Option d+:poloidal_flows = 1 (default)
+	Option d+:density_floor = 1e-07 (default)
+	Option d+:temperature_floor = 0.1 (default)
+	Option d+:low_n_diffuse = 0 (default)
+	Option d+:low_n_diffuse_perp = 0 (default)
+	Option d+:low_p_diffuse_perp = 0 (default)
+	Option d+:hyper_z = -1 (default)
+	Option d+:evolve_log = 0 (default)
+Setting boundary for variable Nd+
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option Nd+:function = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option all:scale = 1 (default)
+	Option all:evolve_bndry = 0 (default)
+	Option Nd+:evolve_bndry = 0 (default)
+	Option d+:charge = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:AA = 2 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option inv_meters_cubed = 1e+19 ()
+	Option seconds = 1.0439684754508785e-08 ()
+	Option Nd+:source_time_dependent = 0 (default)
+	Option Nd+:source_only_in_core = 0 (default)
+Variable 'Nd+_src' not in mesh options. Setting to 0.000000e+00
+	Option Nd+:source = <Field3D> (default)
+	Option Nd+:neumann_boundary_average_z = 0 (default)
+	Option d+:evolve_log = false (default)
+	Option d+:density_floor = 1e-07 (default)
+	Option d+:low_n_diffuse_perp = false (default)
+	Option d+:temperature_floor = 0.1 (default)
+	Option d+:low_T_diffuse_perp = 0 (default)
+	Option d+:low_p_diffuse_perp = false (default)
+	Option d+:damp_p_nt = 0 (default)
+	Option d+:conduction_collisions_mode = multispecies (default)
+Setting boundary for variable Pd+
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option Pd+:function = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option all:scale = 1 (default)
+	Option all:evolve_bndry = false (default)
+	Option Pd+:evolve_bndry = 0 (default)
+	Option d+:bndry_flux = true (default)
+	Option d+:poloidal_flows = true (default)
+	Option d+:p_div_v = 0 (default)
+	Option d+:hyper_z = -1 (default)
+	Option d+:hyper_z_T = -1 (default)
+	Option d+:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:precondition = 1 (default)
+	Option inv_meters_cubed = 1e+19 ()
+	Option eV = 100 ()
+	Option seconds = 1.0439684754508785e-08 ()
+Variable 'Pd+_src' not in mesh options. Setting to 0.000000e+00
+	Option Pd+:powerflux = 2.5e7 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:length_xpt = 10 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:y_xpt = pi * ( 2 - dymin - sqrt( (2-dymin)^2 - 4*(1-dymin)*source ) ) / (1 - dymin) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option mesh:source = length_xpt / length (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option Pd+:source_time_dependent = 0 (default)
+	Option Pd+:source_only_in_core = 0 (default)
+	Option Pd+:neumann_boundary_average_z = 0 (default)
+	Option d+:numerical_viscous_heating = 0 (default)
+	Option d+:thermal_conduction = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:kappa_coefficient = 3.9 (default)
+	Option d+:kappa_limit_alpha = -1 (default)
+Setting boundary for variable NVd+
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option NVd+:function = 0 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option all:scale = 1 (default)
+	Option all:evolve_bndry = false (default)
+	Option NVd+:evolve_bndry = 0 (default)
+	Option d+:density_floor = 1e-07 (default)
+	Option d+:temperature_floor = 0.1 (default)
+	Option d+:low_n_diffuse_perp = false (default)
+	Option d+:low_p_diffuse_perp = false (default)
+	Option d+:bndry_flux = true (default)
+	Option d+:poloidal_flows = true (default)
+	Option d+:hyper_z = -1 (default)
+Setting boundary for variable Vd+
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option d+:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:fix_momentum_boundary_flux = 0 (default)
+	Option d+:noflow_lower_y = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:noflow_upper_y = false (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:density_upstream = 5e+19 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:density_controller_p = 500 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:density_controller_i = 0.01 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:density_integral_positive = 0 (default)
+	Option d+:density_source_positive = false (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:type = (evolve_density, evolve_pressure, evolve_momentum,noflow_boundary) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:bndry_flux = 1 (default)
+	Option d:poloidal_flows = 1 (default)
+	Option d:density_floor = 1e-05 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:temperature_floor = 0.1 (default)
+	Option d:low_n_diffuse = 0 (default)
+	Option d:low_n_diffuse_perp = 0 (default)
+	Option d:low_p_diffuse_perp = 0 (default)
+	Option d:hyper_z = -1 (default)
+	Option d:evolve_log = 0 (default)
+Setting boundary for variable Nd
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option Nd:function = 0.001 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option all:scale = 1 (default)
+	Option all:evolve_bndry = false (default)
+	Option Nd:evolve_bndry = 0 (default)
+	Option d:charge = 0 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:AA = 2 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option inv_meters_cubed = 1e+19 ()
+	Option seconds = 1.0439684754508785e-08 ()
+	Option Nd:source_time_dependent = 0 (default)
+	Option Nd:source_only_in_core = 0 (default)
+Variable 'Nd_src' not in mesh options. Setting to 0.000000e+00
+	Option Nd:source = <Field3D> (default)
+	Option Nd:neumann_boundary_average_z = 0 (default)
+	Option d:evolve_log = false (default)
+	Option d:density_floor = 1e-05 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:low_n_diffuse_perp = false (default)
+	Option d:temperature_floor = 0.1 (default)
+	Option d:low_T_diffuse_perp = 0 (default)
+	Option d:low_p_diffuse_perp = false (default)
+	Option d:damp_p_nt = 0 (default)
+	Option d:conduction_collisions_mode = multispecies (default)
+Setting boundary for variable Pd
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option Pd:function = 0.0001 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option all:scale = 1 (default)
+	Option all:evolve_bndry = false (default)
+	Option Pd:evolve_bndry = 0 (default)
+	Option d:bndry_flux = true (default)
+	Option d:poloidal_flows = true (default)
+	Option d:p_div_v = 0 (default)
+	Option d:hyper_z = -1 (default)
+	Option d:hyper_z_T = -1 (default)
+	Option d:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:precondition = 1 (default)
+	Option inv_meters_cubed = 1e+19 ()
+	Option eV = 100 ()
+	Option seconds = 1.0439684754508785e-08 ()
+Variable 'Pd_src' not in mesh options. Setting to 0.000000e+00
+	Option Pd:source = <Field3D> (default)
+	Option Pd:source_time_dependent = 0 (default)
+	Option Pd:source_only_in_core = 0 (default)
+	Option Pd:neumann_boundary_average_z = 0 (default)
+	Option d:numerical_viscous_heating = 0 (default)
+	Option d:thermal_conduction = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:kappa_coefficient = 2.5 (default)
+	Option d:kappa_limit_alpha = -1 (default)
+Setting boundary for variable NVd
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option all:function = 0.0 (default)
+	Option all:scale = 1 (default)
+	Option all:evolve_bndry = false (default)
+	Option NVd:evolve_bndry = 0 (default)
+	Option d:density_floor = 1e-05 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:temperature_floor = 0.1 (default)
+	Option d:low_n_diffuse_perp = false (default)
+	Option d:low_p_diffuse_perp = false (default)
+	Option d:bndry_flux = true (default)
+	Option d:poloidal_flows = true (default)
+	Option d:hyper_z = -1 (default)
+Setting boundary for variable Vd
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option d:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d:fix_momentum_boundary_flux = 0 (default)
+	Option d:noflow_lower_y = 1 (default)
+	Option d:noflow_upper_y = 1 (default)
+	Option e:type = quasineutral, evolve_pressure, zero_current, noflow_boundary (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option e:charge = -1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option e:AA = 0.0005446623093681918 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option e:evolve_log = 0 (default)
+	Option e:density_floor = 1e-07 (default)
+	Option e:low_n_diffuse_perp = 0 (default)
+	Option e:temperature_floor = 0.1 (default)
+	Option e:low_T_diffuse_perp = 0 (default)
+	Option e:low_p_diffuse_perp = 0 (default)
+	Option e:damp_p_nt = 0 (default)
+	Option e:conduction_collisions_mode = multispecies (default)
+Setting boundary for variable Pe
+	upper_target region: 	Option all:bndry_all = dirichlet (default)
+
+	Option input:transform_from_field_aligned = true (default)
+	Option input:max_recursion_depth = 0 (default)
+	Option Pe:function = `Pd+:function` (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option Pd+:function = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option all:scale = 1 (default)
+	Option all:evolve_bndry = false (default)
+	Option Pe:evolve_bndry = 0 (default)
+	Option e:bndry_flux = 1 (default)
+	Option e:poloidal_flows = 1 (default)
+	Option e:p_div_v = 0 (default)
+	Option e:hyper_z = -1 (default)
+	Option e:hyper_z_T = -1 (default)
+	Option e:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option e:precondition = 1 (default)
+	Option inv_meters_cubed = 1e+19 ()
+	Option eV = 100 ()
+	Option seconds = 1.0439684754508785e-08 ()
+Variable 'Pe_src' not in mesh options. Setting to 0.000000e+00
+	Option Pd+:source = (powerflux*2/3 / (mesh:length_xpt))*H(mesh:y_xpt - y) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option Pd+:powerflux = 2.5e7 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option Pe:source_time_dependent = 0 (default)
+	Option Pe:source_only_in_core = 0 (default)
+	Option Pe:neumann_boundary_average_z = 0 (default)
+	Option e:numerical_viscous_heating = 0 (default)
+	Option e:thermal_conduction = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option e:kappa_coefficient = 2.23446 (default)
+	Option e:kappa_limit_alpha = -1 (default)
+	Option e:charge = -1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option e:noflow_lower_y = 1 (default)
+	Option e:noflow_upper_y = false (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option sheath_boundary_simple:secondary_electron_coef = 0 (default)
+	Option sheath_boundary_simple:sin_alpha = 1 (default)
+	Option sheath_boundary_simple:gamma_e = 3.5 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option sheath_boundary_simple:gamma_i = 3.5 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option sheath_boundary_simple:sheath_ion_polytropic = 1 (default)
+	Option sheath_boundary_simple:lower_y = false (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option sheath_boundary_simple:upper_y = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option sheath_boundary_simple:always_set_phi = 0 (default)
+	Option eV = 100 ()
+	Option sheath_boundary_simple:wall_potential = <Field3D> (default)
+	Option sheath_boundary_simple:no_flow = 0 (default)
+	Option sheath_boundary_simple:density_boundary_mode = 1 (default)
+	Option sheath_boundary_simple:pressure_boundary_mode = 1 (default)
+	Option sheath_boundary_simple:temperature_boundary_mode = 1 (default)
+	Option sheath_boundary_simple:diagnose = 0 (default)
+	Option eV = 100 ()
+	Option inv_meters_cubed = 1e+19 ()
+	Option meters = 0.0010217477552952484 ()
+	Option seconds = 1.0439684754508785e-08 ()
+	Option collisions:electron_electron = 1 (default)
+	Option collisions:electron_ion = 1 (default)
+	Option collisions:electron_neutral = 0 (default)
+	Option collisions:ion_ion = 1 (default)
+	Option collisions:ion_neutral = 0 (default)
+	Option collisions:neutral_neutral = 1 (default)
+	Option collisions:frictional_heating = 1 (default)
+	Option collisions:ei_multiplier = 1 (default)
+	Option collisions:diagnose = 0 (default)
+	Option eV = 100 ()
+	Option recycling:species = d+ (examples/tokamak-1D/1D-threshold/BOUT.inp)
+Variable 'is_pump' not in mesh options. Setting to 0.000000e+00
+	Option d+:recycle_as = d (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option recycling:density_floor = 1e-07 (default)
+	Option d+:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:target_recycle_multiplier = 1 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:sol_recycle_multiplier = 1 (default)
+	Option d+:pfr_recycle_multiplier = 1 (default)
+	Option d+:pump_recycle_multiplier = 1 (default)
+	Option d+:target_recycle_energy = 3.5 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:sol_recycle_energy = 3 (default)
+	Option d+:pfr_recycle_energy = 3 (default)
+	Option d+:target_fast_recycle_fraction = 0 (default)
+	Option d+:pfr_fast_recycle_fraction = 0 (default)
+	Option d+:sol_fast_recycle_fraction = 0 (default)
+	Option d+:target_fast_recycle_energy_factor = 0 (default)
+	Option d+:sol_fast_recycle_energy_factor = 0 (default)
+	Option d+:pfr_fast_recycle_energy_factor = 0 (default)
+	Option d+:target_recycle = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option d+:sol_recycle = 0 (default)
+	Option d+:pfr_recycle = 0 (default)
+	Option d+:neutral_pump = 0 (default)
+	Option reactions:type = (d + e -> d+ + 2e,d+ + e -> d,d + d+ -> d+ + d,) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option reactions:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option reactions:type = (d + e -> d+ + 2e,d+ + e -> d,d + d+ -> d+ + d,) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option json_database_dir = /users/sr1937/scratch/hermes-3/json_database (default)
+	Option d:K_iz_multiplier = 1 (default)
+	Option d:R_ex_multiplier = 1 (default)
+	Option reactions:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option reactions:type = (d + e -> d+ + 2e,d+ + e -> d,d + d+ -> d+ + d,) (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option json_database_dir = /users/sr1937/scratch/hermes-3/json_database (default)
+	Option d:K_rec_multiplier = 1 (default)
+	Option d:R_rec_multiplier = 1 (default)
+	Option reactions:diagnose = true (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option reactions:no_neutral_cx_mom_gain = 0 (default)
+	Option d:K_cx_multiplier = 1 (default)
+	Option electron_force_balance:diagnose = 0 (default)
+	Option neutral_parallel_diffusion:dneut = 10 (examples/tokamak-1D/1D-threshold/BOUT.inp)
+	Option neutral_parallel_diffusion:diagnose = 0 (default)
+	Option neutral_parallel_diffusion:diffusion_collisions_mode = afn (default)
+	Option neutral_parallel_diffusion:equation_fix = 1 (default)
+	Option neutral_parallel_diffusion:perpendicular_conduction = 1 (default)
+	Option neutral_parallel_diffusion:perpendicular_viscosity = 1 (default)
+Variable 'grid_id' not in mesh options. Setting to 
+Variable 'hypnotoad_version' not in mesh options. Setting to 
+Variable 'hypnotoad_git_hash' not in mesh options. Setting to 
+Variable 'hypnotoad_git_diff' not in mesh options. Setting to 
+Variable 'hypnotoad_geqdsk_filename' not in mesh options. Setting to 
+Variable 'grid_id' not in mesh options. Setting to 
+Variable 'hypnotoad_version' not in mesh options. Setting to 
+Variable 'hypnotoad_git_hash' not in mesh options. Setting to 
+Variable 'hypnotoad_git_diff' not in mesh options. Setting to 
+Variable 'hypnotoad_geqdsk_filename' not in mesh options. Setting to 
+	Option wall_limit = -1 (default)
+	Option stopCheck = 0 (default)
+	Option stopCheckName = BOUT.stop (default)
+	Option datadir = examples/tokamak-1D/1D-threshold/ (Command line)
+Solver running for 50 outputs with output timestep of 4.789400e+03
+Initialising solver
+Initialising SUNDIALS' CVODE solver
+	3d fields = 7, 2d fields = 0 neq=2800, local_N=700
+	Using BDF method
+WARNING: Option 'mxorder' is deprecated. Please use 'cvode_max_order' instead
+	Using Newton iteration
+	Option solver:linear_solver = gmres (default)
+	Using user-supplied preconditioner
+	Using difference quotient approximation for Jacobian
+Running simulation
+
+Run ID: 256f15ec-e070-40f8-b879-b5b51261dc8b
+
+Run started at  : Fri Oct 17 16:52:34 2025
+	Option restart = false (default)
+	Option append = false (default)
+	Option dump_on_restart = 1 (default)
+	d neutral diffusion collisionality mode: 'afn' using d_d+_cx d_d+_iz 
+	d+ conduction collisionality mode: 'multispecies' using d+_d+_coll d+_d_cx d+_e_coll 
+	d conduction collisionality mode: 'multispecies' using d_d+_cx d_d_coll 
+	e conduction collisionality mode: 'multispecies' using e_d+_coll e_e_coll 
+	Option input:validate = 0 (default)
+	Option input:error_on_unused_options = 1 (default)
+	Option optionfile = BOUT.inp (default)
+	Option datadir = examples/tokamak-1D/1D-threshold/ (Command line)
+	Option d+_density_error_integral = 0 (upstream_density_feedback)
+Sim Time  |  RHS evals  | Wall Time |  Calc    Inv   Comm    I/O   SOLVER
+
+0.000e+00          1       1.18e-01     0.5    0.0    0.5  120.7  -21.7
+	Option pardiv:type = cyclic (default)
+	Option fft:fft_measurement_flag = estimate (default)
+4.789e+03      29644       2.68e+01    86.3    0.0    1.8    0.3   11.6
+9.579e+03      56799       5.08e+01    86.2    0.0    2.0    0.1   11.7
+1.437e+04      63322       5.67e+01    86.2    0.0    1.9    0.1   11.8
+1.916e+04      16918       1.52e+01    86.0    0.0    1.8    0.3   11.8
+2.395e+04      18849       1.71e+01    86.0    0.0    1.8    0.3   11.9
+2.874e+04       9123       8.24e+00    85.8    0.0    1.8    0.6   11.7
+3.353e+04       5801       5.27e+00    85.4    0.0    1.8    1.0   11.9
+3.832e+04       3824       3.51e+00    84.6    0.0    1.8    1.5   12.0
+4.310e+04       3298       3.04e+00    84.3    0.0    1.8    1.8   12.1
+4.789e+04       4154       3.80e+00    84.6    0.0    1.9    1.4   12.1
+5.268e+04       3679       3.38e+00    84.5    0.0    1.8    1.7   12.1
+5.747e+04       4043       3.71e+00    84.6    0.0    1.8    1.6   12.0
+6.226e+04       3865       3.55e+00    84.7    0.0    1.8    1.6   12.0
+6.705e+04       2962       2.73e+00    84.0    0.0    1.8    2.0   12.2
+7.184e+04       4305       3.96e+00    84.4    0.0    2.1    1.5   12.0
+7.663e+04       2506       2.33e+00    83.5    0.0    1.8    2.4   12.3
+8.142e+04       2961       2.75e+00    83.8    0.0    1.8    2.1   12.3
+8.621e+04       2596       2.41e+00    83.7    0.0    1.7    2.4   12.2
+9.100e+04       2689       2.50e+00    83.7    0.0    1.8    2.4   12.1
+9.579e+04       2409       2.25e+00    83.2    0.0    1.9    2.6   12.3
+1.006e+05       2799       2.61e+00    83.8    0.0    1.7    2.3   12.2
+1.054e+05       5828       5.32e+00    85.2    0.0    1.8    1.2   11.8
+1.102e+05       4700       4.33e+00    84.7    0.0    1.9    1.4   11.9
+1.149e+05       4433       4.06e+00    84.8    0.0    1.8    1.5   11.9
+1.197e+05       4709       4.32e+00    84.9    0.0    1.7    1.4   11.9
+1.245e+05       5266       4.80e+00    84.9    0.0    1.8    1.3   12.0
+1.293e+05       3482       3.21e+00    84.3    0.0    1.8    2.0   12.0
+1.341e+05       2748       2.56e+00    83.3    0.0    1.8    2.4   12.4
+1.389e+05       2417       2.26e+00    82.9    0.0    1.8    2.8   12.5
+1.437e+05       2700       2.51e+00    83.6    0.0    1.7    2.5   12.2
+1.485e+05       2896       2.69e+00    83.4    0.0    1.8    2.5   12.2
+1.533e+05       3150       2.91e+00    83.9    0.0    1.8    2.2   12.1
+1.581e+05       2325       2.18e+00    83.1    0.0    1.7    2.9   12.3
+1.628e+05       3040       2.82e+00    83.9    0.0    1.7    2.3   12.1
+1.676e+05       2448       2.29e+00    83.1    0.0    1.8    2.8   12.3
+1.724e+05       2841       2.64e+00    83.6    0.0    1.7    2.5   12.2
+1.772e+05       3282       3.04e+00    83.9    0.0    1.8    2.2   12.2
+1.820e+05       3579       3.31e+00    84.2    0.0    1.8    2.0   12.0
+1.868e+05       9318       8.49e+00    85.3    0.0    1.9    0.8   12.0
+1.916e+05      10916       1.01e+01    83.8    0.0    1.9    0.7   13.6
+1.964e+05      11608       1.05e+01    85.9    0.0    2.0    0.7   11.5
+2.012e+05      11698       1.05e+01    86.3    0.0    1.8    0.7   11.2
+2.059e+05      11534       1.04e+01    86.3    0.0    1.8    0.7   11.2
+2.107e+05      12131       1.09e+01    86.4    0.0    1.8    0.7   11.1
+2.155e+05      12322       1.11e+01    86.4    0.0    1.8    0.6   11.2
+2.203e+05      12472       1.12e+01    86.4    0.0    1.8    0.6   11.2
+2.251e+05      13185       1.19e+01    86.5    0.0    1.8    0.6   11.0
+2.299e+05      13635       1.39e+01    83.0    0.0    2.1    0.7   14.3
+2.347e+05      13080       1.19e+01    85.3    0.0    1.9    0.6   12.2
+2.395e+05      12440       1.13e+01    85.4    0.0    1.9    0.7   12.1
+
+Run finished at  : Fri Oct 17 16:59:24 2025
+Run time : 6 m 50 s
+	Option datadir = examples/tokamak-1D/1D-threshold/ (Command line)
+	Option settingsfile = BOUT.settings (default)
+	Option time_report:show = 0 (default)

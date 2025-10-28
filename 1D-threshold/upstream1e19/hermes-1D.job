@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+#----------------------------- Slurm directives ------------------------------#
+
+#SBATCH --job-name=hermes-1D               # Job name
+
+#SBATCH --ntasks=1                      # Number of MPI tasks to request
+
+#SBATCH --nodes=1                       # Run on the same node
+
+#SBATCH --cpus-per-task=4               # Number of CPU cores per MPI task
+
+#SBATCH --mem=1G                        # Total memory to request
+
+#SBATCH --time=0-00:10:00               # Time limit (DD-HH:MM:SS)
+
+#SBATCH --account=pet-bout-2025        # Project account to use
+
+#SBATCH --output=%x-%j.log              # Standard output log
+
+
+# Abort if any command fails
+
+set -e
+
+# Commands to run
+
+cd ../../../../
+
+source hermes.env
+
+mpirun -np 4 hermes-3 -d examples/tokamak-1D/1D-threshold/
