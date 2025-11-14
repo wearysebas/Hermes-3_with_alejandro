@@ -1,5 +1,6 @@
 # ----------------------------------------
 # ARCHIVOS INDIVIDUALES A EXCLUIR
+# Excluyendo todo lo que NO es una carpeta Exercise
 # ----------------------------------------
 1D_postprocessing_alejandro.ipynb
 animation_temp_dens.gif
@@ -12,10 +13,3 @@ BOUT.settings
 BOUT.dmp.0.nc
 BOUT.LOG.0
 BOUT.restart.0.nc
-
-# ----------------------------------------
-# EXCLUIR CUALQUIER OTRA COSA GRANDE O TEMPORAL
-# ----------------------------------------
-*.dat
-*.out
-__pycache__/
